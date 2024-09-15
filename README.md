@@ -17,7 +17,7 @@ For this project, I acted as a Cybersecurity Analyst on a security team for an o
 Before I did anything else, I needed to identify the network interfaces that could be used to capture network packet data. I chose to use ifconfig to for this task.</br></br>
                                                 
 <p align="center">
-<img src="https://i.imgur.com/QnMexuQ.png" height="80%" width="80%" alt="Open the file that contains the allow list"/>
+<img src="https://i.imgur.com/whah6Wj.png" height="80%" width="80%" alt="Open the file that contains the allow list"/>
 <br />
 <br />
 </p>
