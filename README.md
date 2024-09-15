@@ -17,7 +17,7 @@ For this project, I acted as a Cybersecurity Analyst on a security team for an o
 Before I did anything else, I needed to identify the network interfaces that could be used to capture network packet data. I chose to use ifconfig to for this task.</br></br>
                                                 
 <p align="center">
-<img src="https://i.imgur.com/QnMexuQ.png" height="40%" width="40%" alt="Open the file that contains the allow list"/>
+<img src="https://i.imgur.com/QnMexuQ.png" height="80%" width="80%" alt="Open the file that contains the allow list"/>
 <br />
 <br />
 </p>
@@ -25,7 +25,7 @@ Before I did anything else, I needed to identify the network interfaces that cou
 Then, I used a with statement to open the file.</br></br>
 
 <p align="center">
-<img src="https://i.imgur.com/IZ1S2vE.png" height="60%" width="60%" alt="Open the file that contains the allow list"/>
+<img src="https://i.imgur.com/RwHOLAc.png" height="60%" width="60%" alt="Open the file that contains the allow list"/>
 <br />
 <br />
 </p>
@@ -37,7 +37,7 @@ In the algorithm I created, the with statement is used with the .open() function
 I used the .read() method to convert the file contents into a string for the variable ip_addresses.</br></br> 
 
 <p align="center">
-<img src="https://i.imgur.com/vGlvRmr.png" height="80%" width="80%" alt="Read the file contents"/>
+<img src="https://i.imgur.com/s618TSC.png" height="80%" width="80%" alt="Read the file contents"/>
 <br />
 <br />
 </p>
@@ -47,7 +47,7 @@ I used the .read() method to convert the file contents into a string for the var
 The .split() method was used to convert the ip_addresses string into a list. This was done in order to separate the the individual IP addresses into a formated list.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/OF8HuwC.png" height="60%" width="60%" alt="Convert the string into a list"/>
+<img src="https://i.imgur.com/Iuu68tk.png" height="60%" width="60%" alt="Convert the string into a list"/>
 <br />
 <br />
 </p>
@@ -57,7 +57,7 @@ The .split() method was used to convert the ip_addresses string into a list. Thi
 A for loop is used to iterate through the ip_addresses list.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/Bix4Ivp.png" height="60%" width="60%" alt="Iterate through the IP addresses list"/>
+<img src="https://i.imgur.com/HwG3LTV.png" height="60%" width="60%" alt="Iterate through the IP addresses list"/>
 <br />
 <br />
 </p>
@@ -67,7 +67,7 @@ A for loop is used to iterate through the ip_addresses list.<br/><br/>
 A conditional statement was used to check if any of the addresses in the remove_list exist in the ip_addresses list. If an address is found to exist in the ip_addresses list and the remove_list then it is removed from the ip_addresses list.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/hYY5ore.png" height="40%" width="40%" alt="Remove IP addresses that are on the remove list"/>
+<img src="https://i.imgur.com/AkdWrLr.png" height="40%" width="40%" alt="Remove IP addresses that are on the remove list"/>
 <br />
 <br />
 </p>
@@ -77,7 +77,7 @@ A conditional statement was used to check if any of the addresses in the remove_
 The .join() method was used to take the ip_addresses list and turn it into a string prepatory to saving it to the file.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/sLpgJFv.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
+<img src="https://i.imgur.com/m9mrkN3.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
 <br />
 <br />
 </p>
@@ -85,12 +85,23 @@ The .join() method was used to take the ip_addresses list and turn it into a str
 The .open() function was used in write mode to open the "allow_list.txt" file. The reason for opening the file is to write the correct IP addresses to the file. The .open() function was used with the argument "w" which means the file is opened in write mode.</br></br>
 
 <p align="center">
-<img src="https://i.imgur.com/VPiPHkO.png" height="60%" width="60%" alt="Update the file with the revised list of IP addresses"/>
+<img src="https://i.imgur.com/SCC6GEk.png" height="60%" width="60%" alt="Update the file with the revised list of IP addresses"/>
 <br />
 <br />
 </p>
 
 The .write() function was used to write the changes to the "allow_list.txt" file.</br></br>
+
+<h2>Update the File with the Revised List of IP Addresses</h2>
+
+The .join() method was used to take the ip_addresses list and turn it into a string prepatory to saving it to the file.<br/><br/>
+
+<p align="center">
+<img src="https://i.imgur.com/BnoPJ2G.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
+<br />
+<br />
+</p>
+
 
 <h2>Summary</h2>
 
