@@ -23,47 +23,32 @@ Before I did anything else, I needed to identify the network interfaces that cou
 <br />
 </p>
 
-The Ethernet network interface is identified by the entry with the `eth` prefix. I used `tcpdump` to identify the interface options available for packet capture.</br></br> 
+The Ethernet network interface is identified by the entry with the `eth` prefix. I used `tcpdump` to identify the interface options available for packet capture. Discovered that eth0 interface was available.</br></br> 
 
 <p align="center">
-<img src="https://i.imgur.com/RwHOLAc.png" height="60%" width="60%" alt="Open the file that contains the allow list"/>
+<img src="https://i.imgur.com/RwHOLAc.png" height="80%" width="80%" alt="Open the file that contains the allow list"/>
 <br />
 <br />
 </p>
 
 <h3>Inspect the network traffic of a network interface with tcpdump</h3>
 
-For this part of the project, I used `tcpdump` to filter live network packet traffic on the eth0 interface.</br></br> 
+For this part of the project, I used `tcpdump` to filter live network packet traffic on the eth0 interface.</br>
+
+This command will run tcpdump with the following options:</br>
+       - \-i eth0: Capture data specifically from the eth0 interface.</br>
+       - \-v: Display detailed packet data.</br>
+       - \-c5: Capture 5 packets of data.</br></br>
 
 <p align="center">
-<img src="https://i.imgur.com/s618TSC.png" height="80%" width="80%" alt="Read the file contents"/>
+<img src="https://i.imgur.com/s618TSC.png" height="100%" width="100%" alt="Read the file contents"/>
 <br />
 <br />
 </p>
 
-  This command will run tcpdump with the following options:</br>
-       - \-i eth0: Capture data specifically from the eth0 interface.</br>
-       - \-v: Display detailed packet data.</br>
-       - \-c5: Capture 5 packets of data.</br>
+After the command execution, tcpdump reported that it was listening on the eth0 interface, and it provided information on the link type and the capture size in bytes. On the next line, the first field is the packet's timestamp, followed by the protocol type, IP. The verbose option, -v, has provided more details about the IP packet fields, such as TOS, TTL, offset, flags, internal protocol type (in this case, TCP (6)), and the length of the outer IP packet in bytes. In the next section, the data shows the systems that are communicating with each other. The direction of the arrow (>) indicates the direction of the traffic flow in this packet. Each system name includes a suffix with the port number (.5000 in the screenshot), which is used by the source and the destination systems for this packet.</br></br>
 
-
-1.	In the example data at the start of the packet output, tcpdump reported that it was listening on the eth0 interface, and it provided information on the link type and the capture size in bytes:
-
-2.	On the next line, the first field is the packet's timestamp, followed by the protocol type, IP:
-
-3.	The verbose option, -v, has provided more details about the IP packet fields, such as TOS, TTL, offset, flags, internal protocol type (in this case, TCP (6)), and the length of the outer IP packet in bytes:
-4.	In the next section, the data shows the systems that are communicating with each other:
-
-The direction of the arrow (>) indicates the direction of the traffic flow in this packet. Each system name includes a suffix with the port number (.5000 in the screenshot), which is used by the source and the destination systems for this packet.
-
-
-The remaining data filters the header data for the inner TCP packet:
-
-The flags field identifies TCP flags. In this case, the P represents the push flag and the period indicates it's an ACK flag. This means the packet is pushing out data.
-
-The next field is the TCP checksum value, which is used for detecting errors in the data.
-
-This section also includes the sequence and acknowledgment numbers, the window size, and the length of the inner TCP packet in bytes.
+The remaining data filters the header data for the inner TCP packet. The flags field identifies TCP flags. In this case, the P represents the push flag and the period indicates it's an ACK flag. This means the packet is pushing out data. The next field is the TCP checksum value, which is used for detecting errors in the data. This section also includes the sequence and acknowledgment numbers, the window size, and the length of the inner TCP packet in bytes.</br></br>
 
 <h3>Capture network traffic with tcpdump</h3>
 
@@ -78,23 +63,23 @@ This command will run tcpdump in the background with the following options:
 •	&: This is an instruction to the Bash shell to run the command in the background.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/Iuu68tk.png" height="60%" width="60%" alt="Convert the string into a list"/>
+<img src="https://i.imgur.com/Iuu68tk.png" height="80%" width="80%" alt="Convert the string into a list"/>
 <br />
 <br />
 </p>
 
-A for loop is used to iterate through the ip_addresses list.<br/><br/>
+After I pressed the ENTER key the following output was displayed.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/HwG3LTV.png" height="60%" width="60%" alt="Iterate through the IP addresses list"/>
+<img src="https://i.imgur.com/HwG3LTV.png" height="80%" width="80%" alt="Iterate through the IP addresses list"/>
 <br />
 <br />
 </p>
 
-2.	Use curl to generate some HTTP (port 80) traffic. When the curl command is used like this to open a website, it generates some HTTP (TCP port 80) traffic that can be captured.<br/><br/>
+I used curl to generate some HTTP (port 80) traffic. When the curl command is used like this to open a website, it generates some HTTP (TCP port 80) traffic that can be captured.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/AkdWrLr.png" height="40%" width="40%" alt="Remove IP addresses that are on the remove list"/>
+<img src="https://i.imgur.com/AkdWrLr.png" height="80%" width="80%" alt="Remove IP addresses that are on the remove list"/>
 <br />
 <br />
 </p>
@@ -108,13 +93,7 @@ A for loop is used to iterate through the ip_addresses list.<br/><br/>
 </p>
 
 <h3>Filter the captured packet data</h3>
-Use the tcpdump command to filter the packet header data from the capture.pcap capture file.</br></br>
-
-<p align="center">
-<img src="https://i.imgur.com/SCC6GEk.png" height="60%" width="60%" alt="Update the file with the revised list of IP addresses"/>
-<br />
-<br />
-</p>
+I used the tcpdump command to filter the packet header data from the capture.pcap capture file.</br></br>
 
 This command will run tcpdump with the following options:
 •	-nn: Disable port and protocol name lookup.
@@ -122,20 +101,24 @@ This command will run tcpdump with the following options:
 •	-v: Display detailed packet data.
 You must specify the -nn switch again here, as you want to make sure tcpdump does not perform name lookups of either IP addresses or ports, since this can alert threat actors.</br></br>
 
+<p align="center">
+<img src="https://i.imgur.com/SCC6GEk.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
+<br />
+<br />
+</p>
 
+I used the tcpdump command to filter the extended packet data from the capture.pcap capture file.
 
-2.	Use the tcpdump command to filter the extended packet data from the capture.pcap capture file.<br/><br/>
+This command will run tcpdump with the following options:
+•	-nn: Disable port and protocol name lookup.
+•	-r: Read capture data from the named file.
+•	-X: Display the hexadecimal and ASCII output format packet data. Security analysts can analyze hexadecimal and ASCII output to detect patterns or anomalies during malware analysis or forensic analysis.<br/><br/>
 
 <p align="center">
 <img src="https://i.imgur.com/BnoPJ2G.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
 <br />
 <br />
 </p>
-
-This command will run tcpdump with the following options:
-•	-nn: Disable port and protocol name lookup.
-•	-r: Read capture data from the named file.
-•	-X: Display the hexadecimal and ASCII output format packet data. Security analysts can analyze hexadecimal and ASCII output to detect patterns or anomalies during malware analysis or forensic analysis.
 
 <h3>Summary</h3>
 
