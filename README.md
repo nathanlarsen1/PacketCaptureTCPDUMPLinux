@@ -102,7 +102,7 @@ This command will run tcpdump with the following options:
 You must specify the -nn switch again here, as you want to make sure tcpdump does not perform name lookups of either IP addresses or ports, since this can alert threat actors.</br></br>
 
 <p align="center">
-<img src="https://i.imgur.com/SCC6GEk.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
+<img src="https://i.imgur.com/SCC6GEk.png" height="100%" width="100%" alt="Update the file with the revised list of IP addresses"/>
 <br />
 <br />
 </p>
@@ -115,7 +115,7 @@ This command will run tcpdump with the following options:
 •	-X: Display the hexadecimal and ASCII output format packet data. Security analysts can analyze hexadecimal and ASCII output to detect patterns or anomalies during malware analysis or forensic analysis.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/BnoPJ2G.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
+<img src="https://i.imgur.com/BnoPJ2G.png" height="100%" width="100%" alt="Update the file with the revised list of IP addresses"/>
 <br />
 <br />
 </p>
