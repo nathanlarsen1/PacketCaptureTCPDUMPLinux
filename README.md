@@ -36,9 +36,9 @@ The Ethernet network interface is identified by the entry with the `eth` prefix.
 For this part of the project, I used `tcpdump` to filter live network packet traffic on the eth0 interface.</br>
 
 This command will run tcpdump with the following options:</br>
-       - \-i eth0: Capture data specifically from the eth0 interface.</br>
-       - \-v: Display detailed packet data.</br>
-       - \-c5: Capture 5 packets of data.</br></br>
+-i eth0: Capture data specifically from the eth0 interface.</br>
+-v: Display detailed packet data.</br>
+-c5: Capture 5 packets of data.</br></br>
 
 <p align="center">
 <img src="https://i.imgur.com/s618TSC.png" height="100%" width="100%" alt="Read the file contents"/>
@@ -52,15 +52,15 @@ The remaining data filters the header data for the inner TCP packet. The flags f
 
 <h3>Capture network traffic with tcpdump</h3>
 
-Capture packet data into a file called capture.pcap:
-You must press the ENTER key to get your command prompt back after running this command.
-This command will run tcpdump in the background with the following options:
-•	-i eth0: Capture data from the eth0 interface.
-•	-nn: Do not attempt to resolve IP addresses or ports to names.This is best practice from a security perspective, as the lookup data may not be valid. It also prevents malicious actors from being alerted to an investigation.
-•	-c9: Capture 9 packets of data and then exit.
-•	port 80: Filter only port 80 traffic. This is the default HTTP port.
-•	-w capture.pcap: Save the captured data to the named file.
-•	&: This is an instruction to the Bash shell to run the command in the background.<br/><br/>
+Capture packet data into a file called capture.pcap. You must press the ENTER key to get your command prompt back after running this command.</br></br>
+
+This command will run tcpdump in the background with the following options:<br/>
+-i eth0: Capture data from the eth0 interface.<br/>
+-nn: Do not attempt to resolve IP addresses or ports to names.This is best practice from a security perspective, as the lookup data may not be valid. It also prevents malicious actors from being alerted to an investigation.<br/>
+-c9: Capture 9 packets of data and then exit.<br/>
+port 80: Filter only port 80 traffic. This is the default HTTP port.<br/>
+-w capture.pcap: Save the captured data to the named file.<br/>
+&: This is an instruction to the Bash shell to run the command in the background.<br/><br/>
 
 <p align="center">
 <img src="https://i.imgur.com/Iuu68tk.png" height="80%" width="80%" alt="Convert the string into a list"/>
@@ -68,7 +68,7 @@ This command will run tcpdump in the background with the following options:
 <br />
 </p>
 
-After I pressed the ENTER key the following output was displayed.<br/><br/>
+After I pressed the ENTER key I was returned to the command prompt.<br/><br/>
 
 <p align="center">
 <img src="https://i.imgur.com/HwG3LTV.png" height="80%" width="80%" alt="Iterate through the IP addresses list"/>
@@ -76,7 +76,7 @@ After I pressed the ENTER key the following output was displayed.<br/><br/>
 <br />
 </p>
 
-I used curl to generate some HTTP (port 80) traffic. When the curl command is used like this to open a website, it generates some HTTP (TCP port 80) traffic that can be captured.<br/><br/>
+Curl was used to generate some HTTP (port 80) traffic that could be captured.<br/><br/>
 
 <p align="center">
 <img src="https://i.imgur.com/AkdWrLr.png" height="80%" width="80%" alt="Remove IP addresses that are on the remove list"/>
@@ -84,7 +84,7 @@ I used curl to generate some HTTP (port 80) traffic. When the curl command is us
 <br />
 </p>
 
-3.	Verify that packet data has been captured.<br/><br/>
+Verified that packet data had been captured by running the `ls -l` command on the capture.pcap file and discovered it was 1404 bytes which showed that it contained data.<br/><br/>
 
 <p align="center">
 <img src="https://i.imgur.com/m9mrkN3.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
@@ -93,12 +93,12 @@ I used curl to generate some HTTP (port 80) traffic. When the curl command is us
 </p>
 
 <h3>Filter the captured packet data</h3>
-I used the tcpdump command to filter the packet header data from the capture.pcap capture file.</br></br>
+The tcpdump command was used to filter the packet header data from the capture.pcap capture file.</br></br>
 
-This command will run tcpdump with the following options:
-•	-nn: Disable port and protocol name lookup.
-•	-r: Read capture data from the named file.
-•	-v: Display detailed packet data.
+This command ran tcpdump with the following options:</br>
+-nn: Disable port and protocol name lookup.</br>
+-r: Read capture data from the named file.</br>
+-v: Display detailed packet data.</br>
 You must specify the -nn switch again here, as you want to make sure tcpdump does not perform name lookups of either IP addresses or ports, since this can alert threat actors.</br></br>
 
 <p align="center">
@@ -107,12 +107,12 @@ You must specify the -nn switch again here, as you want to make sure tcpdump doe
 <br />
 </p>
 
-I used the tcpdump command to filter the extended packet data from the capture.pcap capture file.
+For the final step in the project, the tcpdump command was used to filter the extended packet data from the capture.pcap capture file.
 
-This command will run tcpdump with the following options:
-•	-nn: Disable port and protocol name lookup.
-•	-r: Read capture data from the named file.
-•	-X: Display the hexadecimal and ASCII output format packet data. Security analysts can analyze hexadecimal and ASCII output to detect patterns or anomalies during malware analysis or forensic analysis.<br/><br/>
+This command will run tcpdump with the following options:</br>
+-nn: Disable port and protocol name lookup.</br>
+-r: Read capture data from the named file.</br>
+-X: Display the hexadecimal and ASCII output format packet data. Security analysts can analyze hexadecimal and ASCII output to detect patterns or anomalies during malware analysis or forensic analysis.<br/><br/>
 
 <p align="center">
 <img src="https://i.imgur.com/BnoPJ2G.png" height="100%" width="100%" alt="Update the file with the revised list of IP addresses"/>
