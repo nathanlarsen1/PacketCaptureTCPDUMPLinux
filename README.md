@@ -122,11 +122,4 @@ This command will run tcpdump with the following options:
 
 <h3>Summary</h3>
 
-In this excerise, I demonstrated the use of Python used by a Cybersecurity Analyst. This example displayed how algorithms in Python can be used to perform several necessary functions to improve accuracy and efficiency of daily tasks.
-
-•	identify network interfaces,
-•	use the tcpdump command to capture network data for inspection,
-•	interpret the information that tcpdump outputs regarding a packet, and
-•	save and load packet data for later analysis.
-
-
+In this excerise, I demonstrated the use of tcpdump used by a Cybersecurity Analyst. This example displayed how you can identify netowrk interfaces. How you can use tcpdump to capture network data for inspection, interpret the output and save and load packet data for later analysis.
