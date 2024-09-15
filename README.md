@@ -22,17 +22,14 @@ Before I did anything else, I needed to identify the network interfaces that cou
 <br />
 </p>
 
-Then, I used a with statement to open the file.</br></br>
-
 <p align="center">
 <img src="https://i.imgur.com/RwHOLAc.png" height="60%" width="60%" alt="Open the file that contains the allow list"/>
 <br />
 <br />
 </p>
 
-In the algorithm I created, the with statement is used with the .open() function in read mode to open the allow list file to read it. The reason for opening the file is to access the IP addresses stored in the file. The .open() function was used with the argument "r" which means the file is opened in read-only mode.</br></br>
 
-<h2>Read the File Contents</h2>
+<h2>Inspect the network traffic of a network interface with tcpdump</h2>
 
 I used the .read() method to convert the file contents into a string for the variable ip_addresses.</br></br> 
 
@@ -42,7 +39,7 @@ I used the .read() method to convert the file contents into a string for the var
 <br />
 </p>
 
-<h2>Convert the String into a List</h2>
+<h2>Capture network traffic with tcpdump</h2>
 
 The .split() method was used to convert the ip_addresses string into a list. This was done in order to separate the the individual IP addresses into a formated list.<br/><br/>
 
@@ -52,8 +49,7 @@ The .split() method was used to convert the ip_addresses string into a list. Thi
 <br />
 </p>
 
-<h2>Iterate Through the IP Addresses List</h2>
-
+<h2>Capture network traffic with tcpdump</h2>
 A for loop is used to iterate through the ip_addresses list.<br/><br/>
 
 <p align="center">
@@ -61,8 +57,6 @@ A for loop is used to iterate through the ip_addresses list.<br/><br/>
 <br />
 <br />
 </p>
-
-<h2>Remove IP Addresses That Are on the Remove List</h2>
 
 A conditional statement was used to check if any of the addresses in the remove_list exist in the ip_addresses list. If an address is found to exist in the ip_addresses list and the remove_list then it is removed from the ip_addresses list.<br/><br/>
 
@@ -72,8 +66,6 @@ A conditional statement was used to check if any of the addresses in the remove_
 <br />
 </p>
 
-<h2>Update the File with the Revised List of IP Addresses</h2>
-
 The .join() method was used to take the ip_addresses list and turn it into a string prepatory to saving it to the file.<br/><br/>
 
 <p align="center">
@@ -82,6 +74,7 @@ The .join() method was used to take the ip_addresses list and turn it into a str
 <br />
 </p>
 
+<h2>Filter the captured packet data</h2>
 The .open() function was used in write mode to open the "allow_list.txt" file. The reason for opening the file is to write the correct IP addresses to the file. The .open() function was used with the argument "w" which means the file is opened in write mode.</br></br>
 
 <p align="center">
@@ -92,7 +85,7 @@ The .open() function was used in write mode to open the "allow_list.txt" file. T
 
 The .write() function was used to write the changes to the "allow_list.txt" file.</br></br>
 
-<h2>Update the File with the Revised List of IP Addresses</h2>
+
 
 The .join() method was used to take the ip_addresses list and turn it into a string prepatory to saving it to the file.<br/><br/>
 
