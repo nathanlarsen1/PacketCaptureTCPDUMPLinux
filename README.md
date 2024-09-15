@@ -91,7 +91,7 @@ A for loop is used to iterate through the ip_addresses list.<br/><br/>
 <br />
 </p>
 
-A conditional statement was used to check if any of the addresses in the remove_list exist in the ip_addresses list. If an address is found to exist in the ip_addresses list and the remove_list then it is removed from the ip_addresses list.<br/><br/>
+2.	Use curl to generate some HTTP (port 80) traffic. When the curl command is used like this to open a website, it generates some HTTP (TCP port 80) traffic that can be captured.<br/><br/>
 
 <p align="center">
 <img src="https://i.imgur.com/AkdWrLr.png" height="40%" width="40%" alt="Remove IP addresses that are on the remove list"/>
@@ -99,7 +99,7 @@ A conditional statement was used to check if any of the addresses in the remove_
 <br />
 </p>
 
-The .join() method was used to take the ip_addresses list and turn it into a string prepatory to saving it to the file.<br/><br/>
+3.	Verify that packet data has been captured.<br/><br/>
 
 <p align="center">
 <img src="https://i.imgur.com/m9mrkN3.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
@@ -108,7 +108,7 @@ The .join() method was used to take the ip_addresses list and turn it into a str
 </p>
 
 <h3>Filter the captured packet data</h3>
-The .open() function was used in write mode to open the "allow_list.txt" file. The reason for opening the file is to write the correct IP addresses to the file. The .open() function was used with the argument "w" which means the file is opened in write mode.</br></br>
+Use the tcpdump command to filter the packet header data from the capture.pcap capture file.</br></br>
 
 <p align="center">
 <img src="https://i.imgur.com/SCC6GEk.png" height="60%" width="60%" alt="Update the file with the revised list of IP addresses"/>
@@ -116,11 +116,15 @@ The .open() function was used in write mode to open the "allow_list.txt" file. T
 <br />
 </p>
 
-The .write() function was used to write the changes to the "allow_list.txt" file.</br></br>
+This command will run tcpdump with the following options:
+•	-nn: Disable port and protocol name lookup.
+•	-r: Read capture data from the named file.
+•	-v: Display detailed packet data.
+You must specify the -nn switch again here, as you want to make sure tcpdump does not perform name lookups of either IP addresses or ports, since this can alert threat actors.</br></br>
 
 
 
-The .join() method was used to take the ip_addresses list and turn it into a string prepatory to saving it to the file.<br/><br/>
+2.	Use the tcpdump command to filter the extended packet data from the capture.pcap capture file.<br/><br/>
 
 <p align="center">
 <img src="https://i.imgur.com/BnoPJ2G.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
@@ -128,8 +132,18 @@ The .join() method was used to take the ip_addresses list and turn it into a str
 <br />
 </p>
 
+This command will run tcpdump with the following options:
+•	-nn: Disable port and protocol name lookup.
+•	-r: Read capture data from the named file.
+•	-X: Display the hexadecimal and ASCII output format packet data. Security analysts can analyze hexadecimal and ASCII output to detect patterns or anomalies during malware analysis or forensic analysis.
 
 <h3>Summary</h3>
 
 In this excerise, I demonstrated the use of Python used by a Cybersecurity Analyst. This example displayed how algorithms in Python can be used to perform several necessary functions to improve accuracy and efficiency of daily tasks.
+
+•	identify network interfaces,
+•	use the tcpdump command to capture network data for inspection,
+•	interpret the information that tcpdump outputs regarding a packet, and
+•	save and load packet data for later analysis.
+
 
