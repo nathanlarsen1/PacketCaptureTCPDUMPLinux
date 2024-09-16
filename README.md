@@ -20,7 +20,7 @@ For this project, I acted as a Cybersecurity Analyst on a security team for an o
 To start the project, I needed to identify the network interfaces that could be used to capture network packet data. I chose to use `ifconfig` command for this task.</br></br>
                                                 
 <p align="center">
-<img src="https://i.imgur.com/whah6Wj.png" height="100%" width="100%" alt="Open the file that contains the allow list"/>
+<img src="https://i.imgur.com/whah6Wj.png" height="80%" width="80%" alt="Open the file that contains the allow list"/>
 <br />
 <br />
 </p>
@@ -28,7 +28,7 @@ To start the project, I needed to identify the network interfaces that could be 
 The Ethernet network interface is identified by the entry with the `eth` prefix. I used `tcpdump` to identify the interface options available for packet capture. I discovered that eth0 interface was available.</br></br> 
 
 <p align="center">
-<img src="https://i.imgur.com/RwHOLAc.png" height="100%" width="100%" alt="Open the file that contains the allow list"/>
+<img src="https://i.imgur.com/RwHOLAc.png" height="80%" width="80%" alt="Open the file that contains the allow list"/>
 <br />
 <br />
 </p>
@@ -71,7 +71,7 @@ port 80: Filter only port 80 traffic. This is the default HTTP port.<br/>
 &: This is an instruction to the Bash shell to run the command in the background.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/Iuu68tk.png" height="100%" width="100%" alt="Convert the string into a list"/>
+<img src="https://i.imgur.com/Iuu68tk.png" height="80%" width="80%" alt="Convert the string into a list"/>
 <br />
 <br />
 </p>
@@ -79,7 +79,7 @@ port 80: Filter only port 80 traffic. This is the default HTTP port.<br/>
 After I pressed the ENTER key I was returned to the command prompt.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/HwG3LTV.png" height="100%" width="100%" alt="Iterate through the IP addresses list"/>
+<img src="https://i.imgur.com/HwG3LTV.png" height="80%" width="80%" alt="Iterate through the IP addresses list"/>
 <br />
 <br />
 </p>
@@ -87,7 +87,7 @@ After I pressed the ENTER key I was returned to the command prompt.<br/><br/>
 Curl was used to generate some HTTP (port 80) traffic that could be captured.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/AkdWrLr.png" height="100%" width="100%" alt="Remove IP addresses that are on the remove list"/>
+<img src="https://i.imgur.com/AkdWrLr.png" height="80%" width="80%" alt="Remove IP addresses that are on the remove list"/>
 <br />
 <br />
 </p>
@@ -95,7 +95,7 @@ Curl was used to generate some HTTP (port 80) traffic that could be captured.<br
 Next, I verified that packet data had been captured by running the `ls -l` command on the capture.pcap file and discovered it was 1404 bytes which showed that it contained capture data.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/m9mrkN3.png" height="100%" width="100%" alt="Update the file with the revised list of IP addresses"/>
+<img src="https://i.imgur.com/m9mrkN3.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
 <br />
 <br />
 </p>
