@@ -38,9 +38,9 @@ The Ethernet network interface is identified by the entry with the `eth` prefix.
 For this part of the project, I used `tcpdump` to filter live network packet traffic on the eth0 interface.</br>
 
 In this instance, tcpdump was run with the following options:</br>
--i eth0: Capture data specifically from the eth0 interface.</br>
--v: Display detailed packet data.</br>
--c5: Capture 5 packets of data.</br></br>
+* -i eth0: Capture data specifically from the eth0 interface.</br>
+* -v: Display detailed packet data.</br>
+* -c5: Capture 5 packets of data.</br></br>
 
 <p align="center">
 <img src="https://i.imgur.com/s618TSC.png" height="100%" width="100%" alt="Read the file contents"/>
@@ -63,12 +63,12 @@ The next field was the TCP checksum value, used for error detection. This sectio
 Capture packet data into a file called capture.pcap. You must press the ENTER key to get your command prompt back after running this command.</br></br>
 
 In this instance, tcpdump was run with the following options:</br>
--i eth0: Capture data from the eth0 interface.<br/>
--nn: Do not attempt to resolve IP addresses or ports to names.This is best practice from a security perspective, as the lookup data may not be valid. It also prevents malicious actors from being alerted to an investigation.<br/>
--c9: Capture 9 packets of data and then exit.<br/>
-port 80: Filter only port 80 traffic. This is the default HTTP port.<br/>
--w capture.pcap: Save the captured data to the named file.<br/>
-&: This is an instruction to the Bash shell to run the command in the background.<br/><br/>
+* -i eth0: Capture data from the eth0 interface.<br/>
+* -nn: Do not attempt to resolve IP addresses or ports to names.This is best practice from a security perspective, as the lookup data may not be valid. It also prevents malicious actors from being alerted to an investigation.<br/>
+* -c9: Capture 9 packets of data and then exit.<br/>
+* port 80: Filter only port 80 traffic. This is the default HTTP port.<br/>
+* -w capture.pcap: Save the captured data to the named file.<br/>
+* &: This is an instruction to the Bash shell to run the command in the background.<br/><br/>
 
 <p align="center">
 <img src="https://i.imgur.com/Iuu68tk.png" height="80%" width="80%" alt="Convert the string into a list"/>
@@ -105,10 +105,10 @@ Next, I verified that packet data had been captured by running the `ls -l` comma
 The `tcpdump` command was used to filter the packet header data from the capture.pcap capture file.</br></br>
 
 In this instance, tcpdump was run with the following options:</br>
--nn: Disable port and protocol name lookup.</br>
--r: Read capture data from the named file.</br>
--v: Display detailed packet data.</br>
-You must specify the -nn switch again here, as you want to make sure tcpdump does not perform name lookups of either IP addresses or ports, since this can alert threat actors.</br></br>
+* -nn: Disable port and protocol name lookup.</br>
+* -r: Read capture data from the named file.</br>
+* -v: Display detailed packet data.</br>
+* You must specify the -nn switch again here, as you want to make sure tcpdump does not perform name lookups of either IP addresses or ports, since this can alert threat actors.</br></br>
 
 <p align="center">
 <img src="https://i.imgur.com/SCC6GEk.png" height="100%" width="100%" alt="Update the file with the revised list of IP addresses"/>
@@ -119,9 +119,9 @@ You must specify the -nn switch again here, as you want to make sure tcpdump doe
 For the final step in the project, the `tcpdump` command was used to filter the extended packet data from the capture.pcap capture file.
 
 In this instance, tcpdump was run with the following options:</br>
--nn: Disable port and protocol name lookup.</br>
--r: Read capture data from the named file.</br>
--X: Display the hexadecimal and ASCII output format packet data. Security analysts can analyze hexadecimal and ASCII output to detect patterns or anomalies during malware analysis or forensic analysis.<br/><br/>
+* -nn: Disable port and protocol name lookup.</br>
+* -r: Read capture data from the named file.</br>
+* -X: Display the hexadecimal and ASCII output format packet data. Security analysts can analyze hexadecimal and ASCII output to detect patterns or anomalies during malware analysis or forensic analysis.<br/><br/>
 
 <p align="center">
 <img src="https://i.imgur.com/BnoPJ2G.png" height="100%" width="100%" alt="Update the file with the revised list of IP addresses"/>
