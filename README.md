@@ -17,7 +17,7 @@ For this project, I acted as a Cybersecurity Analyst on a security team for an o
 
 <h3>1. Identify network interfaces</h3>
 
-To start the project, I needed to identify the network interfaces that could be used to capture network packet data. I chose to use `ifconfig` for this task.</br></br>
+To start the project, I needed to identify the network interfaces that could be used to capture network packet data. I chose to use `ifconfig` command for this task.</br></br>
                                                 
 <p align="center">
 <img src="https://i.imgur.com/whah6Wj.png" height="100%" width="100%" alt="Open the file that contains the allow list"/>
