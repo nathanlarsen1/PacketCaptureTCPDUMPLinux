@@ -11,7 +11,7 @@ For this project, I acted as a Cybersecurity Analyst on a security team for an o
 
 <h2>Environments Used </h2>
 
-- <b>Linux</b></br></br>
+- <b>Linux</b>
 
 <h2>Project Walkthrough</h2>
 
