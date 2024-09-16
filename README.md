@@ -15,7 +15,7 @@ For this project, I acted as a Cybersecurity Analyst on a security team for an o
 
 <h2>Project Walkthrough</h2>
 
-<h3>Identify network interfaces</h3>
+<h3>Identify Network Interfaces</h3>
 
 To start the project, I needed to identify the network interfaces that could be used to capture network packet data. I chose to use `ifconfig` for this task.</br></br>
                                                 
@@ -33,7 +33,7 @@ The Ethernet network interface is identified by the entry with the `eth` prefix.
 <br />
 </p>
 
-<h3>Inspect the network traffic of a network interface with tcpdump</h3>
+<h3>Inspect the Network Traffic of a Network Interface with TCPdump</h3>
 
 For this part of the project, I used `tcpdump` to filter live network packet traffic on the eth0 interface.</br>
 
@@ -58,7 +58,7 @@ The remaining data filtered the header data for the inner TCP packet. The flags 
 
 The next field was the TCP checksum value, used for error detection. This section also included sequence and acknowledgment numbers, window size, and the inner TCP packet's length.</br></br>
 
-<h3>Capture network traffic with tcpdump</h3>
+<h3>Capture Network Traffic with TCPdump</h3>
 
 Capture packet data into a file called capture.pcap. You must press the ENTER key to get your command prompt back after running this command.</br></br>
 
@@ -100,7 +100,7 @@ Next, I verified that packet data had been captured by running the `ls -l` comma
 <br />
 </p>
 
-<h3>Filter the captured packet data</h3>
+<h3>Filter the Captured Packet Data</h3>
 The tcpdump command was used to filter the packet header data from the capture.pcap capture file.</br></br>
 
 In this instance, tcpdump was run with the following options:</br>
