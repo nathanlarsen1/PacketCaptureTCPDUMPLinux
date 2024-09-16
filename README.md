@@ -6,7 +6,7 @@ For this project, I acted as a Cybersecurity Analyst on a security team for an o
 
 <h2>Language and Applications</h2>
 
-- <b>TCPDUMP</b>
+- <b>TCPdump</b>
 - <b>Curl</b>
 
 <h2>Environments Used </h2>
