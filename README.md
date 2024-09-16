@@ -1,4 +1,4 @@
-<h1>Packet Capture with TCPDUMP in Linux</h1>
+<h1>Packet Capture with TCPdump in Linux</h1>
 
 
 <h2>Project description</h2>
@@ -48,9 +48,15 @@ In this instance, tcpdump was run with the following options:</br>
 <br />
 </p>
 
-After the command execution, tcpdump reported that it was listening on the eth0 interface, and it provided information on the link type and the capture size in bytes. On the next line, the first field is the packet's timestamp, followed by the protocol type, IP. The verbose option, -v, provided more details about the IP packet fields, such as TOS, TTL, offset, flags, internal protocol type (in this case, TCP (6)), and the length of the outer IP packet in bytes. In the next section, the data shows the systems that are communicating with each other. The direction of the arrow (>) indicates the direction of the traffic flow in this packet. Each system name includes a suffix with the port number (.5000 in the screenshot), which is used by the source and the destination systems for this packet.</br></br>
+After executing the command, tcpdump reported listening on the eth0 interface, providing details about the link type and capture size in bytes.</br>
 
-The remaining data filters the header data for the inner TCP packet. The flags field identifies TCP flags. In this case, the P represents the push flag and the period indicates it's an ACK flag. This means the packet is pushing out data. The next field is the TCP checksum value, which is used for detecting errors in the data. This section also includes the sequence and acknowledgment numbers, the window size, and the length of the inner TCP packet in bytes.</br></br>
+The first field on the next line is the packet's timestamp, followed by the protocol type (IP). The -v option provided more information about the IP packet fields, including TOS, TTL, offset, flags, internal protocol type (TCP in this case), and the outer IP packet's length.</br>
+
+The subsequent section displayed the communicating systems. The arrow's direction (>) indicated the traffic flow. Each system name included a port number suffix (.5000 in the screenshot), used by the source and destination systems for this packet.</br>
+
+The remaining data filtered the header data for the inner TCP packet. The flags field identified TCP flags. Here, the P represented the push flag, and the period indicated an ACK flag, signifying that the packet was pushing out data.</br>
+
+The next field was the TCP checksum value, used for error detection. This section also included sequence and acknowledgment numbers, window size, and the inner TCP packet's length.</br></br>
 
 <h3>Capture network traffic with tcpdump</h3>
 
