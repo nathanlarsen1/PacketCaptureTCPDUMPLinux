@@ -14,8 +14,10 @@ For this project, I acted as a Cybersecurity Analyst on a security team for an o
 - <b>Linux</b></br></br>
 
 <h2>Project Walkthrough</h2>
+
 <h3>Identify network interfaces</h3>
-To start the project, I needed to identify the network interfaces that could be used to capture network packet data. I chose to use `ifconfig` to for this task.</br></br>
+
+To start the project, I needed to identify the network interfaces that could be used to capture network packet data. I chose to use `ifconfig` for this task.</br></br>
                                                 
 <p align="center">
 <img src="https://i.imgur.com/whah6Wj.png" height="100%" width="100%" alt="Open the file that contains the allow list"/>
@@ -23,7 +25,7 @@ To start the project, I needed to identify the network interfaces that could be 
 <br />
 </p>
 
-The Ethernet network interface is identified by the entry with the `eth` prefix. I used `tcpdump` to identify the interface options available for packet capture. Discovered that eth0 interface was available.</br></br> 
+The Ethernet network interface is identified by the entry with the `eth` prefix. I used `tcpdump` to identify the interface options available for packet capture. I discovered that eth0 interface was available.</br></br> 
 
 <p align="center">
 <img src="https://i.imgur.com/RwHOLAc.png" height="100%" width="100%" alt="Open the file that contains the allow list"/>
@@ -46,7 +48,7 @@ In this instance, tcpdump was run with the following options:</br>
 <br />
 </p>
 
-After the command execution, tcpdump reported that it was listening on the eth0 interface, and it provided information on the link type and the capture size in bytes. On the next line, the first field is the packet's timestamp, followed by the protocol type, IP. The verbose option, -v, has provided more details about the IP packet fields, such as TOS, TTL, offset, flags, internal protocol type (in this case, TCP (6)), and the length of the outer IP packet in bytes. In the next section, the data shows the systems that are communicating with each other. The direction of the arrow (>) indicates the direction of the traffic flow in this packet. Each system name includes a suffix with the port number (.5000 in the screenshot), which is used by the source and the destination systems for this packet.</br></br>
+After the command execution, tcpdump reported that it was listening on the eth0 interface, and it provided information on the link type and the capture size in bytes. On the next line, the first field is the packet's timestamp, followed by the protocol type, IP. The verbose option, -v, provided more details about the IP packet fields, such as TOS, TTL, offset, flags, internal protocol type (in this case, TCP (6)), and the length of the outer IP packet in bytes. In the next section, the data shows the systems that are communicating with each other. The direction of the arrow (>) indicates the direction of the traffic flow in this packet. Each system name includes a suffix with the port number (.5000 in the screenshot), which is used by the source and the destination systems for this packet.</br></br>
 
 The remaining data filters the header data for the inner TCP packet. The flags field identifies TCP flags. In this case, the P represents the push flag and the period indicates it's an ACK flag. This means the packet is pushing out data. The next field is the TCP checksum value, which is used for detecting errors in the data. This section also includes the sequence and acknowledgment numbers, the window size, and the length of the inner TCP packet in bytes.</br></br>
 
@@ -84,7 +86,7 @@ Curl was used to generate some HTTP (port 80) traffic that could be captured.<br
 <br />
 </p>
 
-Verified that packet data had been captured by running the `ls -l` command on the capture.pcap file and discovered it was 1404 bytes which showed that it contained data.<br/><br/>
+Next, I verified that packet data had been captured by running the `ls -l` command on the capture.pcap file and discovered it was 1404 bytes which showed that it contained capture data.<br/><br/>
 
 <p align="center">
 <img src="https://i.imgur.com/m9mrkN3.png" height="100%" width="100%" alt="Update the file with the revised list of IP addresses"/>
