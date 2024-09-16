@@ -101,7 +101,7 @@ Next, I verified that packet data had been captured by running the `ls -l` comma
 </p>
 
 <h3>4. Filter the captured packet data</h3>
-The tcpdump command was used to filter the packet header data from the capture.pcap capture file.</br></br>
+The `tcpdump` command was used to filter the packet header data from the capture.pcap capture file.</br></br>
 
 In this instance, tcpdump was run with the following options:</br>
 -nn: Disable port and protocol name lookup.</br>
