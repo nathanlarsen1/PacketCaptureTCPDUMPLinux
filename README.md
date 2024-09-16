@@ -87,7 +87,7 @@ After I pressed the ENTER key I was returned to the command prompt.<br/><br/>
 Curl was used to generate some HTTP (port 80) traffic that could be captured.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/AkdWrLr.png" height="80%" width="80%" alt="Remove IP addresses that are on the remove list"/>
+<img src="https://i.imgur.com/AkdWrLr.png" height="60%" width="60%" alt="Remove IP addresses that are on the remove list"/>
 <br />
 <br />
 </p>
@@ -95,7 +95,7 @@ Curl was used to generate some HTTP (port 80) traffic that could be captured.<br
 Next, I verified that packet data had been captured by running the `ls -l` command on the capture.pcap file and discovered it was 1404 bytes which showed that it contained capture data.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/m9mrkN3.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
+<img src="https://i.imgur.com/m9mrkN3.png" height="60%" width="60%" alt="Update the file with the revised list of IP addresses"/>
 <br />
 <br />
 </p>
@@ -130,4 +130,4 @@ In this instance, tcpdump was run with the following options:</br>
 
 <h3>Summary</h3>
 
-In this excerise, I demonstrated the use of tcpdump used by a Cybersecurity Analyst. This example displayed how you can identify netowrk interfaces. How you can use tcpdump to capture network data for inspection, interpret the output and save and load packet data for later analysis.
+In this excerise, I demonstrated the use of tcpdump used by a Cybersecurity Analyst. This example displayed how you can identify netowrk interfaces. Next, I displayed how you can use tcpdump to capture network data for inspection, interpret the output and save and load packet data for later analysis.
